@@ -1,21 +1,21 @@
-/* Multi-AI Wiper – content overlay styles */
+/* ── Multi-AI Wiper – Content Toast (Cyber Dark) ── */
 
 .mw-wiper-toast {
   position: fixed;
   bottom: 24px;
   right: 24px;
   z-index: 2147483647;
-  background: #1e1e2e;
-  color: #cdd6f4;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 13px;
-  padding: 12px 20px;
-  border-radius: 10px;
-  border: 1px solid #313244;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  background: #0d0e14;
+  color: #e2e8f0;
+  font-family: "SF Mono", "Cascadia Code", "Fira Code", monospace;
+  font-size: 12px;
+  padding: 12px 18px;
+  border-radius: 6px;
+  border: 1px solid #1e293b;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
   opacity: 0;
-  transform: translateY(12px);
-  transition: all 0.25s ease;
+  transform: translateY(8px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
 }
 
@@ -27,7 +27,7 @@
 
 .mw-wiper-toast .mw-progress-bar {
   height: 3px;
-  background: #45475a;
+  background: #1e293b;
   border-radius: 2px;
   margin-top: 8px;
   overflow: hidden;
@@ -35,23 +35,26 @@
 
 .mw-wiper-toast .mw-progress-bar .mw-fill {
   height: 100%;
-  background: linear-gradient(90deg, #89b4fa, #a6e3a1);
+  background: linear-gradient(90deg, #38bdf8, #10b981);
   border-radius: 2px;
   transition: width 0.3s ease;
 }
 
 .mw-wiper-toast .mw-undo-btn {
   margin-top: 8px;
-  background: #f38ba8;
-  color: #1e1e2e;
+  background: #10b981;
+  color: #090a0f;
   border: none;
   padding: 4px 12px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 600;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  font-family: "SF Mono", "Cascadia Code", monospace;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   cursor: pointer;
 }
 
 .mw-wiper-toast .mw-undo-btn:hover {
-  background: #eba0ac;
+  background: #34d399;
 }
