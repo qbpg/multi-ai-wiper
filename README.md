@@ -1,133 +1,178 @@
-# Multi-AI Wiper Tool
+<div align="center">
 
-![Manifest V3](https://img.shields.io/badge/Manifest-V3-blueviolet?style=flat-square&logo=googlechrome)
-![100% Local](https://img.shields.io/badge/100%25-Local-00c853?style=flat-square&logo=lock)
-![Zero Telemetry](https://img.shields.io/badge/Zero%20Telemetry-red?style=flat-square&logo=nodedotjs)
+# 🧹 Multi-AI Wiper Tool
 
-A Chrome/Edge/Brave extension to **bulk-delete conversations** from multiple AI platforms — fully local, zero telemetry.
+**Bulk-delete conversations from 5 AI platforms — locally, safely, instantly.**
 
----
+![Manifest V3](https://img.shields.io/badge/Manifest-V3-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white)
+![Chrome](https://img.shields.io/badge/Chrome-Ready-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
+![Edge](https://img.shields.io/badge/Edge-Ready-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white)
+![Brave](https://img.shields.io/badge/Brave-Ready-F97316?style=for-the-badge&logo=brave&logoColor=white)
+![100% Local](https://img.shields.io/badge/100%25-Local-059669?style=for-the-badge&logo=lock&logoColor=white)
+![Zero Telemetry](https://img.shields.io/badge/Zero%20Telemetry-DC2626?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![License MIT](https://img.shields.io/badge/License-MIT-6B7280?style=for-the-badge)
 
-## Supported Platforms
+<br />
 
-| Platform | Status |
-|----------|--------|
-| <img src="icons/icon.svg" width="16"> Google Gemini (`gemini.google.com`) | ✅ Supported |
-| <img src="icons/icon.svg" width="16"> Claude (`claude.ai`) | ✅ Supported |
-| <img src="icons/icon.svg" width="16"> ChatGPT (`chatgpt.com`) | ✅ Supported |
-| <img src="icons/icon.svg" width="16"> DeepSeek (`chat.deepseek.com`) | ✅ Supported |
-| <img src="icons/icon.svg" width="16"> Mistral (`chat.mistral.ai`) | ✅ Supported |
+<img src="icons/icon.svg" width="120" alt="Multi-AI Wiper Icon" />
 
----
-
-## Features
-
-| Feature | Description |
-|---------|-------------|
-| **One-click bulk delete** | Select all conversations and delete them in one action |
-| **Selective delete** | Pick individual conversations via checkboxes |
-| **Search / Filter** | Instantly filter conversations by title |
-| **JSON Backup export** | Export all conversations to JSON before deleting |
-| **Speed control** | Choose Fast ⚡ (50ms), Balanced ⚖️ (150ms), or Safe 🛡️ (300ms) delay |
-| **Custom delay slider** | Fine-tune the inter-delete delay from 50ms to 400ms |
-| **Undo grace period** | 5-second window to cancel after starting deletion |
-| **Keyboard shortcut** | `Ctrl+Shift+D` (Windows/Linux) / `Cmd+Shift+D` (Mac) |
-| **Auto platform detection** | Automatically detects which AI platform is open |
-| **Dark theme UI** | Clean, dark utility-style popup interface |
+</div>
 
 ---
 
-## Installation (Chrome / Edge / Brave)
+## ✦ Supported Platforms
 
-1. **Clone or download** this repository:
-   ```
-   git clone https://github.com/YOUR_USERNAME/multi-ai-wiper-tool.git
-   ```
+<div align="center">
 
-2. Open your browser and navigate to:
-   ```
-   chrome://extensions/
-   ```
-   (or `edge://extensions/` for Edge, `brave://extensions/` for Brave)
+| | Platform | Domain | Status |
+|:-:|----------|--------|:------:|
+| <img src="https://img.shields.io/badge/-Gemini-8B5CF6?style=flat-square&logo=google&logoColor=white" height="28"> | **Google Gemini** | `gemini.google.com` | ✅ |
+| <img src="https://img.shields.io/badge/-Claude-D97706?style=flat-square&logo=anthropic&logoColor=white" height="28"> | **Anthropic Claude** | `claude.ai` | ✅ |
+| <img src="https://img.shields.io/badge/-ChatGPT-10A37F?style=flat-square&logo=openai&logoColor=white" height="28"> | **OpenAI ChatGPT** | `chatgpt.com` | ✅ |
+| <img src="https://img.shields.io/badge/-DeepSeek-2563EB?style=flat-square&logo=datastore&logoColor=white" height="28"> | **DeepSeek** | `chat.deepseek.com` | ✅ |
+| <img src="https://img.shields.io/badge/-Mistral-FF7000?style=flat-square&logo=apache&logoColor=white" height="28"> | **Mistral AI** | `chat.mistral.ai` | ✅ |
 
-3. Enable **Developer mode** (toggle in the top-right corner).
-
-4. Click **"Load unpacked"** and select the `multi-ai-wiper-tool` folder.
-
-5. The extension icon will appear in your toolbar. Click it on any supported AI platform to start.
+</div>
 
 ---
 
-## Usage
+## ✦ Features
 
-1. Navigate to any supported AI platform (Gemini, Claude, ChatGPT, DeepSeek, or Mistral).
-2. Click the extension icon in your toolbar.
-3. The popup will auto-detect the platform and scan your conversations.
-4. Use the search bar to filter, or checkboxes to select specific conversations.
-5. **Export JSON** to create a backup before deleting.
-6. Choose your speed preset and click **Delete Selected**.
-7. A progress overlay shows real-time deletion status with a cancel option.
+<table>
+<tr>
+<td width="50%">
 
----
+### Core
+- **One-click bulk delete** — wipe everything
+- **Selective delete** — pick individual chats
+- **Search & filter** — find by title instantly
+- **JSON backup** — export before deleting
 
-## Security & Privacy
+</td>
+<td width="50%">
 
-- **100% local**: All operations run entirely within your browser. No data is sent to any external server.
-- **Zero telemetry**: No analytics, tracking, or phone-home calls.
-- **No API keys required**: Works purely through DOM interaction.
-- **Backup first**: The extension strongly recommends exporting a JSON backup before any deletion.
+### Control
+- **Speed presets** — ⚡ Fast / ⚖️ Balanced / 🛡️ Safe
+- **Custom delay** — slider from 50ms to 400ms
+- **Undo window** — 5s grace period
+- **Keyboard shortcut** — `Ctrl+Shift+D` / `⌘+Shift+D`
 
-> ⚠️ **WARNING**: Conversation deletion is **irreversible**. Always export a backup before deleting.
-
----
-
-## Keyboard Shortcut
-
-| Platform | Shortcut |
-|----------|----------|
-| Windows / Linux | `Ctrl+Shift+D` |
-| macOS | `Cmd+Shift+D` |
-
-The shortcut opens the popup directly, allowing quick access to the deletion interface.
+</td>
+</tr>
+</table>
 
 ---
 
-## Architecture
+## ✦ Installation
+
+### Chrome / Edge / Brave (Developer Mode)
+
+```
+1. Clone this repo
+   └─ git clone https://github.com/qbpg/multi-ai-wiper.git
+
+2. Open your browser
+   └─ chrome://extensions/   (or edge://extensions/ or brave://extensions/)
+
+3. Enable Developer mode (top-right toggle)
+
+4. Click "Load unpacked" → select the cloned folder
+
+5. Done — icon appears in toolbar
+```
+
+> The extension activates automatically when you visit a supported AI platform.
+
+---
+
+## ✦ Usage
+
+<div align="center">
+
+```
+  ┌──────────────────────────────────────────────────┐
+  │  1. Open any supported AI platform                │
+  │  2. Click the extension icon                      │
+  │  3. Platform auto-detected • chats scanned        │
+  │  4. Filter → Select → Export backup → Delete       │
+  │  5. Progress bar • Cancel anytime                  │
+  └──────────────────────────────────────────────────┘
+```
+
+</div>
+
+| Step | Action |
+|:----:|--------|
+| 1 | Navigate to Gemini, Claude, ChatGPT, DeepSeek or Mistral |
+| 2 | Click the **Multi-AI Wiper** icon in your toolbar |
+| 3 | The popup detects the platform and lists all conversations |
+| 4 | Use the **search bar** to filter, or **checkboxes** to select |
+| 5 | Click **Export JSON** to save a backup |
+| 6 | Choose speed preset → click **Delete Selected** |
+| 7 | Monitor progress → **Cancel** or **Undo** if needed |
+
+---
+
+## ✦ Keyboard Shortcuts
+
+| OS | Shortcut | Action |
+|----|----------|--------|
+| Windows / Linux | `Ctrl + Shift + D` | Open popup |
+| macOS | `⌘ + Shift + D` | Open popup |
+
+---
+
+## ✦ Architecture
 
 ```
 multi-ai-wiper-tool/
-├── manifest.json              # MV3 manifest
+├── manifest.json                    ── MV3 manifest
 ├── background/
-│   └── background.js          # Service worker (keyboard commands, storage)
+│   └── background.js                ── Service worker (shortcuts, storage)
 ├── content/
-│   ├── content.js             # Content script router
-│   ├── content.css            # Overlay toast styles
+│   ├── content.js                   ── Router (SCAN / DELETE / EXPORT)
+│   ├── content.css                  ── Toast overlay styles
 │   └── adapters/
-│       ├── gemini.js          # Google Gemini adapter
-│       ├── claude.js          # Claude adapter
-│       ├── chatgpt.js         # ChatGPT adapter
-│       ├── deepseek.js        # DeepSeek adapter
-│       └── mistral.js         # Mistral adapter
+│       ├── gemini.js                ── Google Gemini adapter
+│       ├── claude.js                ── Anthropic Claude adapter
+│       ├── chatgpt.js               ── OpenAI ChatGPT adapter
+│       ├── deepseek.js              ── DeepSeek adapter
+│       └── mistral.js               ── Mistral AI adapter
 ├── popup/
-│   ├── popup.html             # Extension popup UI
-│   ├── popup.css              # Dark theme styles
-│   └── popup.js               # Popup logic
+│   ├── popup.html                   ── Dark-theme UI
+│   ├── popup.css                    ── Full styling
+│   └── popup.js                     ── Logic (scan/filter/export/delete)
 ├── icons/
-│   ├── icon.svg               # Vector source icon
-│   ├── icon16.png             # 16x16 favicon
-│   ├── icon48.png             # 48x48 toolbar icon
-│   └── icon128.png            # 128x128 store icon
+│   ├── icon.svg                     ── Vector source
+│   ├── icon16.png                   ── Favicon
+│   ├── icon48.png                   ── Toolbar
+│   └── icon128.png                  ── Store / large
 └── README.md
 ```
 
 ---
 
-## License
+## ✦ Security & Privacy
 
-MIT License. Use responsibly. The authors are not responsible for any data loss.
+| | Guarantee |
+|:-:|-----------|
+| 🔒 | **100% local** — everything runs inside your browser |
+| 🚫 | **Zero telemetry** — no analytics, no tracking, no phone-home |
+| 🔑 | **No API keys** — pure DOM interaction, no external calls |
+| 💾 | **Backup first** — export JSON before any deletion |
+
+> **⚠️ WARNING:** Conversation deletion is **irreversible**. Always export a JSON backup before deleting.
 
 ---
 
-## Contributing
+## ✦ License
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+MIT License — use responsibly. The authors are not responsible for any data loss.
+
+---
+
+<div align="center">
+
+**Built with care. No data leaves your machine.**
+
+</div>
