@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=400, initial-scale=1.0" />
+  <title>Multi-AI Wiper</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="mw-header">
+    <div class="mw-logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f38ba8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="3 6 5 6 21 6" />
+        <path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" />
+        <path d="M10 11v6" /><path d="M14 11v6" />
+        <path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" />
+      </svg>
+      <h1>Multi-AI Wiper</h1>
+    </div>
+    <span id="platform-badge" class="mw-badge mw-badge--unknown">Unknown</span>
+  </header>
+
+  <!-- Status -->
+  <div id="status-bar" class="mw-status">
+    <span id="status-text">Detecting platform...</span>
+    <span id="chat-count" class="mw-count"></span>
+  </div>
+
+  <!-- Search -->
+  <div class="mw-search-row">
+    <input type="text" id="search-input" placeholder="Filter conversations..." autocomplete="off" />
+  </div>
+
+  <!-- Controls row -->
+  <div class="mw-controls">
+    <label class="mw-select-all">
+      <input type="checkbox" id="select-all" />
+      <span>Select all</span>
+    </label>
+
+    <div class="mw-speed-group">
+      <button class="mw-speed-btn" data-speed="fast" title="Fast (50ms)">⚡</button>
+      <button class="mw-speed-btn mw-speed-active" data-speed="balanced" title="Balanced (150ms)">⚖️</button>
+      <button class="mw-speed-btn" data-speed="safe" title="Safe (300ms)">🛡️</button>
+      <input type="range" id="delay-slider" min="50" max="400" value="150" title="Custom delay (ms)" />
+      <span id="delay-value" class="mw-delay-val">150ms</span>
+    </div>
+  </div>
+
+  <!-- Chat list -->
+  <div id="chat-list" class="mw-chat-list">
+    <p class="mw-empty-state">No conversations found. Open an AI platform to scan.</p>
+  </div>
+
+  <!-- Action buttons -->
+  <div class="mw-actions">
+    <button id="btn-export" class="mw-btn mw-btn--secondary" disabled>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Export JSON
+    </button>
+    <button id="btn-delete" class="mw-btn mw-btn--danger" disabled>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>
+      Delete Selected
+    </button>
+  </div>
+
+  <!-- Progress overlay -->
+  <div id="progress-overlay" class="mw-overlay mw-hidden">
+    <div class="mw-overlay-content">
+      <p id="progress-text">Deleting...</p>
+      <div class="mw-progress-track">
+        <div id="progress-fill" class="mw-progress-fill"></div>
+      </div>
+      <p id="progress-detail" class="mw-progress-detail"></p>
+      <button id="btn-cancel" class="mw-btn mw-btn--secondary mw-mt8">Cancel</button>
+    </div>
+  </div>
+
+  <!-- Undo toast -->
+  <div id="undo-toast" class="mw-toast mw-hidden">
+    <span id="undo-text">Deleted 0 conversations</span>
+    <button id="btn-undo" class="mw-undo-btn">Undo</button>
+  </div>
+
+  <!-- Warning -->
+  <footer class="mw-footer">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f9e2af" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <span>Deletion is irreversible. Export a backup first.</span>
+  </footer>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>

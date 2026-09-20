@@ -1,0 +1,57 @@
+/* Multi-AI Wiper – content overlay styles */
+
+.mw-wiper-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2147483647;
+  background: #1e1e2e;
+  color: #cdd6f4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 13px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 1px solid #313244;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: all 0.25s ease;
+  pointer-events: none;
+}
+
+.mw-wiper-toast.mw-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.mw-wiper-toast .mw-progress-bar {
+  height: 3px;
+  background: #45475a;
+  border-radius: 2px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.mw-wiper-toast .mw-progress-bar .mw-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #89b4fa, #a6e3a1);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.mw-wiper-toast .mw-undo-btn {
+  margin-top: 8px;
+  background: #f38ba8;
+  color: #1e1e2e;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mw-wiper-toast .mw-undo-btn:hover {
+  background: #eba0ac;
+}
