@@ -6,6 +6,14 @@ A browser extension to list, filter, export, and delete conversations on support
 
 <p align="center"><img src="icons/icon-gemini.svg" alt="Gemini" title="Gemini" width="36" height="36"> <img src="icons/icon-claude.svg" alt="Claude" title="Claude" width="36" height="36"> <img src="icons/icon-chatgpt.svg" alt="ChatGPT" title="ChatGPT" width="36" height="36"> <img src="icons/icon-deepseek.svg" alt="DeepSeek" title="DeepSeek" width="36" height="36"> <img src="icons/icon-mistral.svg" alt="Mistral" title="Mistral" width="36" height="36"></p>
 
+## Built with
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&amp;logo=html5&amp;logoColor=white" alt="html" height="28">
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&amp;logo=css&amp;logoColor=white" alt="css" height="28">
+  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&amp;logo=javascript&amp;logoColor=F7DF1E" alt="js" height="28">
+</p>
+
 ## Supported platforms
 
 Gemini, Claude, ChatGPT, DeepSeek, and Mistral. Runs in Chromium browsers such as Chrome, Edge, and Brave.
