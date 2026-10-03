@@ -1,185 +1,59 @@
-<div align="center">
+<p align="center"><img src="icons/icon.svg" alt="Multi-AI Wiper" width="80"></p>
 
-# Multi-AI Wiper Tool
+# Multi-AI Wiper
 
-**Bulk-delete conversations from 5 AI platforms — locally, safely, instantly.**
+A browser extension to list, filter, export, and delete conversations on supported AI websites.
 
-![Manifest V3](https://img.shields.io/badge/Manifest-V3-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white)
-![Chrome](https://img.shields.io/badge/Chrome-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)
-![Edge](https://img.shields.io/badge/Edge-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white)
-![Brave](https://img.shields.io/badge/Brave-F97316?style=for-the-badge&logo=brave&logoColor=white)
-![100% Local](https://img.shields.io/badge/100%25_Local-059669?style=for-the-badge&logo=lock&logoColor=white)
-![Zero Telemetry](https://img.shields.io/badge/Zero_Telemetry-DC2626?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![MIT License](https://img.shields.io/badge/MIT-6B7280?style=for-the-badge)
+<p align="center"><img src="icons/icon-gemini.svg" alt="Gemini" title="Gemini" width="36" height="36"> <img src="icons/icon-claude.svg" alt="Claude" title="Claude" width="36" height="36"> <img src="icons/icon-chatgpt.svg" alt="ChatGPT" title="ChatGPT" width="36" height="36"> <img src="icons/icon-deepseek.svg" alt="DeepSeek" title="DeepSeek" width="36" height="36"> <img src="icons/icon-mistral.svg" alt="Mistral" title="Mistral" width="36" height="36"></p>
 
-<br />
+## Supported platforms
 
-<img src="icons/icon.svg" width="120" alt="Multi-AI Wiper" />
-
-</div>
-
----
-
-## Supported Platforms
-
-<div align="center">
-
-<table>
-<tr>
-<td align="center"><img src="icons/icon-gemini.svg" width="40" height="40" /><br /><b>Gemini</b><br /><code>gemini.google.com</code></td>
-<td align="center"><img src="icons/icon-claude.svg" width="40" height="40" /><br /><b>Claude</b><br /><code>claude.ai</code></td>
-<td align="center"><img src="icons/icon-chatgpt.svg" width="40" height="40" /><br /><b>ChatGPT</b><br /><code>chatgpt.com</code></td>
-<td align="center"><img src="icons/icon-deepseek.svg" width="40" height="40" /><br /><b>DeepSeek</b><br /><code>chat.deepseek.com</code></td>
-<td align="center"><img src="icons/icon-mistral.svg" width="40" height="40" /><br /><b>Mistral</b><br /><code>chat.mistral.ai</code></td>
-</tr>
-</table>
-
-</div>
-
----
+Gemini, Claude, ChatGPT, DeepSeek, and Mistral. Runs in Chromium browsers such as Chrome, Edge, and Brave.
 
 ## Features
 
-<table>
-<tr>
-<td width="50%">
+- Detect the platform in the active tab and scan available conversations.
+- Search titles and select conversations individually or together.
+- Export a JSON backup of the conversations exposed by the platform adapter.
+- Delete selected conversations with speed presets or a custom delay.
+- Cancel a batch to stop further deletions.
+- Export the extension source as a JSON bundle.
 
-### Core
-- **One-click bulk delete** — wipe everything
-- **Selective delete** — pick individual chats
-- **Search & filter** — find by title instantly
-- **JSON backup** — export before deleting
-
-</td>
-<td width="50%">
-
-### Control
-- **Speed presets** — Fast / Balanced / Safe
-- **Custom delay** — slider from 50ms to 400ms
-- **Undo window** — 5s grace period
-- **Keyboard shortcut** — `Ctrl+Shift+D` / `Cmd+Shift+D`
-
-</td>
-</tr>
-</table>
-
----
+Platform adapters interact with website pages. Website changes can affect scanning, export, or deletion.
 
 ## Installation
 
-### Chrome / Edge / Brave (Developer Mode)
-
-```
-1. Clone this repo
-   └─ git clone https://github.com/qbpg/multi-ai-wiper.git
-
-2. Open your browser
-   └─ chrome://extensions/   (or edge://extensions/ or brave://extensions/)
-
-3. Enable Developer mode (top-right toggle)
-
-4. Click "Load unpacked" → select the cloned folder
-
-5. Done — icon appears in toolbar
-```
-
-> The extension activates automatically when you visit a supported AI platform.
-
----
+1. Clone this repository.
+2. Open `chrome://extensions/`, `edge://extensions/`, or `brave://extensions/`.
+3. Enable **Developer mode**, choose **Load unpacked**, and select the folder containing `manifest.json`.
+4. Visit a supported platform and open the extension from the toolbar.
 
 ## Usage
 
-<div align="center">
+Scan the active page, filter or select conversations, and export a backup before choosing **Delete Selected**. The progress panel lets you cancel remaining operations.
 
-```
-  ┌──────────────────────────────────────────────────┐
-  │  1. Open any supported AI platform                │
-  │  2. Click the extension icon                      │
-  │  3. Platform auto-detected . chats scanned        │
-  │  4. Filter > Select > Export backup > Delete       │
-  │  5. Progress bar . Cancel anytime                  │
-  └──────────────────────────────────────────────────┘
-```
+Deletion is irreversible. The current **Undo** button does not restore deleted conversations; it only dismisses the notice.
 
-</div>
+| System | Shortcut |
+| --- | --- |
+| Windows / Linux | `Ctrl + Shift + D` |
+| macOS | `Cmd + Shift + D` |
 
-| Step | Action |
-|:----:|--------|
-| 1 | Navigate to Gemini, Claude, ChatGPT, DeepSeek or Mistral |
-| 2 | Click the **Multi-AI Wiper** icon in your toolbar |
-| 3 | The popup detects the platform and lists all conversations |
-| 4 | Use the **search bar** to filter, or **checkboxes** to select |
-| 5 | Click **Export JSON** to save a backup |
-| 6 | Choose speed preset then click **Delete Selected** |
-| 7 | Monitor progress then **Cancel** or **Undo** if needed |
+## Project files
 
----
+| Folder | Purpose |
+| --- | --- |
+| `background/` | Extension service worker |
+| `content/` | Page interaction and platform adapters |
+| `popup/` | Controls, selection, export, and batch deletion |
+| `icons/` | Extension and platform SVG logos |
 
-## Keyboard Shortcuts
+## Privacy
 
-| OS | Shortcut | Action |
-|----|----------|--------|
-| Windows / Linux | `Ctrl + Shift + D` | Open popup |
-| macOS | `Cmd + Shift + D` | Open popup |
-
----
-
-## Architecture
-
-```
-multi-ai-wiper-tool/
-├── manifest.json                    ── MV3 manifest
-├── background/
-│   └── background.js                ── Service worker
-├── content/
-│   ├── content.js                   ── Router
-│   ├── content.css                  ── Toast overlay
-│   └── adapters/
-│       ├── gemini.js                ── Google Gemini
-│       ├── claude.js                ── Anthropic Claude
-│       ├── chatgpt.js               ── OpenAI ChatGPT
-│       ├── deepseek.js              ── DeepSeek
-│       └── mistral.js               ── Mistral AI
-├── popup/
-│   ├── popup.html                   ── Dark-theme UI
-│   ├── popup.css                    ── Full styling
-│   └── popup.js                     ── Popup logic
-├── icons/
-│   ├── icon.svg                     ── Main icon
-│   ├── icon-gemini.svg              ── Gemini logo
-│   ├── icon-claude.svg              ── Claude logo
-│   ├── icon-chatgpt.svg             ── ChatGPT logo
-│   ├── icon-deepseek.svg            ── DeepSeek logo
-│   ├── icon-mistral.svg             ── Mistral logo
-│   ├── icon16.png                   ── Favicon
-│   ├── icon48.png                   ── Toolbar
-│   └── icon128.png                  ── Store
-└── README.md
-```
-
----
-
-## Security & Privacy
-
-| | Guarantee |
-|:-:|-----------|
-| :lock: | **100% local** — everything runs inside your browser |
-| :no_entry: | **Zero telemetry** — no analytics, no tracking, no phone-home |
-| :key: | **No API keys** — pure DOM interaction, no external calls |
-| :floppy_disk: | **Backup first** — export JSON before any deletion |
-
-> **WARNING:** Conversation deletion is **irreversible**. Always export a JSON backup before deleting.
-
----
+The extension runs in your browser and interacts with the supported websites. Settings are stored in browser storage. It does not require an AI API key. Exported files are downloaded locally.
 
 ## License
 
-MIT License — use responsibly. The authors are not responsible for any data loss.
+[MIT](LICENSE) · Created by **qbpg**.
 
----
-
-<div align="center">
-
-**Built with care. No data leaves your machine.**
-
-</div>
+<p align="center"><a href="https://qbpg.space/"><img src="https://raw.githubusercontent.com/qbpg/qbpg/main/assets/portfolio.svg" alt="Portfolio - QBPG" width="188" height="36"></a></p>
