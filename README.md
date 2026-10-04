@@ -65,3 +65,5 @@ The extension runs in your browser and interacts with the supported websites. Se
 [MIT](LICENSE) · Created by **qbpg**.
 
 <p align="center"><a href="https://qbpg.space/"><img src="https://img.shields.io/badge/Portfolio-qbpg.space-000000?style=flat-square&amp;logo=About.me&amp;logoColor=white&amp;labelColor=000000" alt="Portfolio — qbpg.space" height="28"></a></p>
+
+Contact professionnel : [contact@qbpg.space](mailto:contact@qbpg.space)
